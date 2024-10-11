@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define INHERITANCE_CHECK
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +11,28 @@ namespace Acadamy
 	{
 		static void Main(string[] args)
 		{
+#if INHERITANCE_CHECK
 			Human human = new Human("Montana", "Antonio", 25);
 			human.Print();
-            Console.WriteLine(human);
+			Console.WriteLine(human);
 
-            Student student = new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96);
+			Student student = new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96);
 			student.Print();
-            Console.WriteLine(student);
+			Console.WriteLine(student);
 
-            Teacher teacher = new Teacher("White", "Walter", 50, "Chemistry", 25);
+			Teacher teacher = new Teacher("White", "Walter", 50, "Chemistry", 25);
 			teacher.Print();
-            Console.WriteLine(teacher);
-        }
+			Console.WriteLine(teacher);
+
+			Graduate graduate = new Graduate("Shrader", "Hank", 40, "Criminalistic", "OBN", 50, 70, "How to catch Haisenberg");
+			graduate.Print();
+			Console.WriteLine(graduate);
+#endif
+			//Human[] group = new Human[]
+			//{
+			//	new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96),
+			//	new Teacher("White", "Walter", 50, "Chemistry", 25)
+			//};
+		}
 	}
 }
