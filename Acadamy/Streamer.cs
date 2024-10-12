@@ -28,7 +28,7 @@ namespace Acadamy
 				sw.WriteLine(group[i].ToFileString());
 			}
 			sw.Close();
-			Process.Start("notepad", filename);
+			Process.Start("excel", filename);
 		}
 		//CSV - Comma Separated Values (Значения разделенные запятой)
 	}
