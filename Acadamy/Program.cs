@@ -1,6 +1,8 @@
 ﻿//#define INHERITANCE_CHECK
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
@@ -37,6 +39,25 @@ namespace Acadamy
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
 				new Graduate("Shrader", "Hank", 40, "Criminalistic", "OBN", 50, 70, "How to catch Haisenberg")
 			};
+
+			StreamWriter sw = new StreamWriter("File.txt");
+            Console.WriteLine(group.ToString());
+			group.ToList().ForEach(x => sw.WriteLine(x));
+			
+			foreach(Human i in group) 
+			{
+				sw.WriteLine(i);
+			}
+			sw.Close();
+			Process.Start("notepad", "File.txt");
+
+			StreamReader sr = new StreamReader("File.txt");
+			while (!sr.EndOfStream)
+			{
+				string buffer = sr.ReadLine();
+				Console.WriteLine(buffer);
+			}
+			sr.Close();
 		}
 	}
 }

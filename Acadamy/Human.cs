@@ -27,7 +27,7 @@ namespace Acadamy
 
 		public virtual void Print()
 		{
-			Console.WriteLine($"{LastName} {FirstName} {Age}");
+			Console.WriteLine($" {LastName} {FirstName} {Age}");
         }
 		public override string ToString()
 		{
