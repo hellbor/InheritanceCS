@@ -1,4 +1,5 @@
 ﻿//#define INHERITANCE_CHECK
+//#define HOMEWORK
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,6 +9,8 @@ using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.IO;
+using System.Diagnostics;
 
 namespace Acadamy
 {
@@ -35,15 +38,19 @@ namespace Acadamy
 			Human[] group = new Human[]
 			{
 				new Human("Montana", "Antonio", 25),
-				new Student("Pinkman", "Jessie", 22, "chemistry", "WW_220", 95, 96),
+				new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
-				new Graduate("Shrader", "Hank", 40, "Criminalistic", "OBN", 50, 70, "How to catch Haisenberg")
+				new Graduate("Shrader", "Hank", 40, "Criminalistic", "DEA", 70, 50, "How to catch Haisenberg"),
+				new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 97, 98),
+				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 			};
-
+			Print(group);
+			Save(group, "group.txt");
+#if HOMEWORK
 			StreamWriter sw = new StreamWriter("File.txt");
-            Console.WriteLine(group.ToString());
-			
-			foreach(Human i in group) 
+			Console.WriteLine(group.ToString());
+
+			foreach (Human i in group)
 			{
 				sw.WriteLine(i);
 			}
@@ -56,7 +63,26 @@ namespace Acadamy
 				string buffer = sr.ReadLine();
 				Console.WriteLine(buffer);
 			}
-			sr.Close();
+			sr.Close(); 
+#endif
+		}
+		static void Print(Human[] group)
+		{
+			for (int i = 0; i < group.Length; i++)
+			{
+				Console.WriteLine(group[i]);
+			}
+			Console.WriteLine();
+		}
+		static void Save(Human[] group, string filename)
+		{
+			StreamWriter sw = new StreamWriter(filename);
+			for (int i = 0; i < group.Length; i++)
+			{
+				sw.WriteLine(group[i]);
+			}
+			sw.Close();
+			Process.Start("notepad", filename);
 		}
 	}
 }
