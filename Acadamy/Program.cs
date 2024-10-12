@@ -45,7 +45,7 @@ namespace Acadamy
 				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 			};
 			Streamer.Print(group);
-			Streamer.Save(group, "group.txt");
+			Streamer.Save(group, "group.csv");
 #if HOMEWORK
 			StreamWriter sw = new StreamWriter("File.txt");
 			Console.WriteLine(group.ToString());
