@@ -33,8 +33,8 @@ namespace Acadamy
 			Human[] group = new Human[]
 			{
 				new Human("Montana", "Antonio", 25),
-				new Student("pinkman", "jessie", 22, "chemistry", "ww_220", 95, 96),
-				new Teacher("white", "walter", 50, "chemistry", 25),
+				new Student("Pinkman", "Jessie", 22, "chemistry", "WW_220", 95, 96),
+				new Teacher("White", "Walter", 50, "Chemistry", 25),
 				new Graduate("Shrader", "Hank", 40, "Criminalistic", "OBN", 50, 70, "How to catch Haisenberg")
 			};
 		}
