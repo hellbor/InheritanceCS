@@ -44,8 +44,8 @@ namespace Acadamy
 				new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 97, 98),
 				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 			};
-			Print(group);
-			Save(group, "group.txt");
+			Streamer.Print(group);
+			Streamer.Save(group, "group.txt");
 #if HOMEWORK
 			StreamWriter sw = new StreamWriter("File.txt");
 			Console.WriteLine(group.ToString());
@@ -65,24 +65,6 @@ namespace Acadamy
 			}
 			sr.Close(); 
 #endif
-		}
-		static void Print(Human[] group)
-		{
-			for (int i = 0; i < group.Length; i++)
-			{
-				Console.WriteLine(group[i]);
-			}
-			Console.WriteLine();
-		}
-		static void Save(Human[] group, string filename)
-		{
-			StreamWriter sw = new StreamWriter(filename);
-			for (int i = 0; i < group.Length; i++)
-			{
-				sw.WriteLine(group[i]);
-			}
-			sw.Close();
-			Process.Start("notepad", filename);
 		}
 	}
 }
