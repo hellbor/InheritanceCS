@@ -42,7 +42,6 @@ namespace Acadamy
 
 			StreamWriter sw = new StreamWriter("File.txt");
             Console.WriteLine(group.ToString());
-			group.ToList().ForEach(x => sw.WriteLine(x));
 			
 			foreach(Human i in group) 
 			{
