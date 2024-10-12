@@ -8,15 +8,15 @@ namespace Acadamy
 {
 	internal class Graduate:Student
 	{
-		public string Subject { get; set; }
+		public string DiplomaProject { get; set; }
 		public Graduate
 			(
 			string lastName, string firstName, int age,
 			string speciality, string group, double rating, double attendance,
-			string subject
+			string diplomaProject
 			) : base(lastName, firstName, age, speciality, group, rating, attendance)
 		{
-			Subject = subject;
+			DiplomaProject = diplomaProject;
             Console.WriteLine($"GConstructor: {GetHashCode()}");
         }
 		~Graduate() 
@@ -26,11 +26,11 @@ namespace Acadamy
 		public override void Print()
 		{
 			base.Print();
-			Console.WriteLine($" {Subject}");
+			Console.WriteLine($" {DiplomaProject}");
 		}
 		public override string ToString()
 		{
-			return base.ToString() + $" {Subject}";
+			return base.ToString() + $" {DiplomaProject}";
 		}
 	}
 }
