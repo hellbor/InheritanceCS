@@ -30,7 +30,7 @@ namespace Acadamy
 		}
 		public override string ToString()
 		{
-			return base.ToString() + $" {Subject}";
+			return base.ToString() + Subject;
 		}
 	}
 }
