@@ -46,6 +46,7 @@ namespace Acadamy
 			};
 			Streamer.Print(group);
 			Streamer.Save(group, "group.csv");
+			Streamer.Load(group, "group.csv");
 #if HOMEWORK
 			StreamWriter sw = new StreamWriter("File.txt");
 			Console.WriteLine(group.ToString());

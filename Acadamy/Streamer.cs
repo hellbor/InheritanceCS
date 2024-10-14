@@ -23,7 +23,8 @@ namespace Acadamy
 		internal static void Save(Human[] group, string filename)
 		{
 			StreamWriter sw = new StreamWriter(filename);
-			for (int i = 0; i < group.Length; i++)
+            Console.WriteLine("Sep=,");
+            for (int i = 0; i < group.Length; i++)
 			{
 				sw.WriteLine(group[i].ToFileString());
 			}
@@ -31,5 +32,17 @@ namespace Acadamy
 			Process.Start("excel", filename);
 		}
 		//CSV - Comma Separated Values (Значения разделенные запятой)
+		internal static void Load(Human[] group, string filename)
+		{
+			StreamReader sr = new StreamReader("File.csv");
+			while (!sr.EndOfStream)
+			{
+				string buffer = sr.ReadLine();
+				Console.WriteLine(buffer);
+			}
+			sr.Close();
+			//Process.Start("excel", filename);
+			Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+		}
 	}
 }
