@@ -1,5 +1,7 @@
 ﻿//#define INHERITANCE_CHECK
 //#define HOMEWORK
+//#define SAVE_CHECK
+#define LOAD_CHECK
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,18 +37,19 @@ namespace Acadamy
 			graduate.Print();
 			Console.WriteLine(graduate);
 #endif
+#if SAVE_CHECK
 			Human[] group = new Human[]
-			{
+				{
 				new Human("Montana", "Antonio", 25),
 				new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
 				new Graduate("Shrader", "Hank", 40, "Criminalistic", "DEA", 70, 50, "How to catch Haisenberg"),
 				new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 97, 98),
 				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
-			};
+				};
 			Streamer.Print(group);
-			Streamer.Save(group, "group.csv");
-			Streamer.Load(group, "group.csv");
+			Streamer.Save(group, "group.csv"); 
+#endif
 #if HOMEWORK
 			StreamWriter sw = new StreamWriter("File.txt");
 			Console.WriteLine(group.ToString());
@@ -65,6 +68,10 @@ namespace Acadamy
 				Console.WriteLine(buffer);
 			}
 			sr.Close(); 
+#endif
+#if LOAD_CHECK
+			Human[] group = Streamer.Load("group.csv");
+			Streamer.Print(group);
 #endif
 		}
 	}
