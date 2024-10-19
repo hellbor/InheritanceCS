@@ -31,7 +31,7 @@ namespace AbstractGeometry
 			Circle circle = new Circle(50, 570, 95, 3, Color.Yellow);
 			circle.Info(e);
 
-			Triangle triangle=new Triangle(100, 80, 700, 200, 3, Color.Orange);
+			Triangle triangle=new Triangle(100, 80, 670, 200, 3, Color.Orange);
 			triangle.Info(e);
 
         }
