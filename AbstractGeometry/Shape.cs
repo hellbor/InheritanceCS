@@ -28,12 +28,12 @@ namespace AbstractGeometry
 			set => 
 				startX =
 				value < MIN_START_X ? MIN_START_X :
-				value > MIN_START_X ? MIN_START_X :
+				value > MAX_START_X ? MAX_START_X :
 				value;
 		}
 		public int StartY
 		{
-			get => StartY;
+			get => startY;
 			set => startY =
 				value < MIN_START_Y ? MIN_START_Y :
 				value > MAX_START_Y ? MAX_START_Y :
