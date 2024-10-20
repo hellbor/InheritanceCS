@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AbstractGeometry
 {
-	internal class Circle:Shape
+	internal class Circle:Shape,IHaveDiameter
 	{
 		public double radius;
 		public double Radius
@@ -24,12 +24,21 @@ namespace AbstractGeometry
 		{
 			Radius = radius;
 		}
+		public double GetDiameter()
+		{
+			return 2 * Radius;
+		}
 		public override double GetArea() => Math.PI * Math.Pow(Radius, 2);
 		public override double GetPerimeter() => 2 * Math.PI * Radius;
 		public override void Draw(PaintEventArgs e)
 		{
 			Pen pen = new Pen(Color, LineWidth);
 			e.Graphics.DrawEllipse(pen, StartX, StartY, 2 * (float)Radius, 2 * (float)Radius);
+			DrawDiameter(e);
+		}
+		public void DrawDiameter(PaintEventArgs e)
+		{
+			e.Graphics.DrawLine(new Pen(Color, 1), StartX + (int)Radius, StartY, StartX + (int)Radius, StartY + (int)Radius * 2);
 		}
 		public override void Info(PaintEventArgs e)
 		{
