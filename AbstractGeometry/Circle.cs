@@ -33,9 +33,14 @@ namespace AbstractGeometry
 			e.Graphics.DrawEllipse(pen, StartX, StartY, 2 * (float)Radius, 2 * (float)Radius);
 			DrawDiameter(e);
 		}
-		public void DrawDiameter(PaintEventArgs e)
+		public void DrawDiameter(System.Windows.Forms.PaintEventArgs e)
 		{
-			e.Graphics.DrawLine(new Pen(Color, 1), StartX + (float)Radius, StartY, StartX + (float)Radius, StartY + (float)Radius * 2);
+			e.Graphics.DrawLine
+				(
+					new Pen(Color, 1),
+					StartX, StartY,
+					StartX + (int)GetDiameter(), StartY + (int)GetDiameter()
+				);
 		}
 		public override void Info(PaintEventArgs e)
 		{
