@@ -35,11 +35,12 @@ namespace AbstractGeometry
 		}
 		public void DrawDiameter(System.Windows.Forms.PaintEventArgs e)
 		{
+			int dx = (int)(Radius * (1 - 1 / Math.Sqrt(2)));
 			e.Graphics.DrawLine
 				(
 					new Pen(Color, 1),
-					StartX, StartY,
-					StartX + (int)GetDiameter(), StartY + (int)GetDiameter()
+					StartX + dx, StartY + dx,
+					StartX + (int)GetDiameter() - dx, StartY + (int)GetDiameter() - dx
 				);
 		}
 		public override void Info(PaintEventArgs e)
