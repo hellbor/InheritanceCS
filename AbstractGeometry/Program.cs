@@ -37,6 +37,10 @@ namespace AbstractGeometry
 			EquilateralTriangle e_triangle =
 				new EquilateralTriangle(200, 650, 50, 5, Color.GreenYellow);
 			e_triangle.Info(e);
+
+			RightTriangle r_triangle=
+				new RightTriangle(200, 100, 600, 300, 5, Color.GreenYellow);
+			r_triangle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		public static extern IntPtr GetConsoleWindow();
